@@ -27,7 +27,6 @@ env/
 # !.env.example
 
 # IDE and editor configuration
-.vscode/
 .idea/
 
 # macOS Finder / metadata files
@@ -83,3 +82,6 @@ analysis.md
 .claude/settings.local.json
 lyrics_model_gte_vnni.tar.gz
 windows/vendor/redis/amd64/redis-server.exe
+temp_auto_push.bat
+temp_interactive_push.bat
+branch_structure.json
