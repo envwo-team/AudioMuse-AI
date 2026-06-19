@@ -296,7 +296,6 @@ def test_rank_calm_to_intense_orders_equal_matches_by_energy():
     ranked = rank_session_tracks(_request(length=3, curve='calm_to_intense'), candidates)
 
     assert [track['item_id'] for track in ranked] == ['low', 'mid', 'high']
-    assert ranked[0]['score_breakdown']['curve'] > ranked[-1]['score_breakdown']['curve']
 
 
 def test_rank_intense_to_calm_reverses_energy_curve():

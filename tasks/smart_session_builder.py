@@ -704,7 +704,11 @@ def _diversity_penalty(
         penalty += min(1.0, artist_counts.get(artist_key, 0) / max(1, max_per_artist)) * 0.6
     if album_key and any(_normalize_key(track.get("album")) == album_key for track in selected):
         penalty += 0.25
-    if title_key and any(_normalize_key(track.get("title")) == title_key for track in selected):
+    if title_key and artist_key and any(
+        _normalize_key(track.get("title")) == title_key
+        and _normalize_key(track.get("author")) == artist_key
+        for track in selected
+    ):
         penalty += 0.5
     return _clamp_score(penalty)
 
